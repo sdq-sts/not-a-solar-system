@@ -1,5 +1,11 @@
 <template>
-  <v-card :class="{ 'pa-3': screenSize.xlOnly, 'pa-1': screenSize.lgAndDown }">
+  <v-card :class="{ 'pa-3': screenSize.xlOnly, 'pa-1': screenSize.lgAndDown }" height="100%">
+    <v-layout v-if="!series.length">
+      <v-flex>
+        <p class="text-xs-center body mt-1">Sem dados disponíveis</p>
+      </v-flex>
+    </v-layout>
+
     <apexchart
       v-if="series.length"
       width="100%"

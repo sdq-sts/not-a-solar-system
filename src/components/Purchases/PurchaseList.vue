@@ -5,6 +5,7 @@
     :items="purchasesList"
     hide-actions
     class="elevation-1"
+    no-data-text="Nenhuma compra cadastrada"
   >
     <template slot="items" slot-scope="props">
       <td class="text-xs-center">{{ props.item.nfe }}</td>

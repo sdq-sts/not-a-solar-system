@@ -56,7 +56,6 @@
         offset-xs0 offset-xl1>
         <ProductsList
           ref="productsList"
-          v-if="hasProducts"
           :loading="loadingProducts"
           :productsList="products"
           @editItem="editProduct"
@@ -143,9 +142,6 @@ export default {
       } else {
         return ''
       }
-    },
-    hasProducts () {
-      return this.products ? this.products.length > 0 : false
     }
   },
 
@@ -169,10 +165,14 @@ export default {
       this.loadingForm = true
 
       if (file) {
-        const { data: res } = await this.requestFileUploadUrl({ fileType: file.type, folder: 'products' })
-
-        await this.uploadFile({ url: res.url, file })
-        product = { ...payload, image: res.key }
+        try {
+          const { data: res } = await this.requestFileUploadUrl({ fileType: file.type, folder: 'products' })
+          await this.uploadFile({ url: res.url, file })
+          product = { ...payload, image: res.key }
+        } catch (error) {
+          this.showSnackbar({ color: 'error', text: `Erro ao editar o produto` })
+          this.loadingForm = false
+        }
       }
 
       try {

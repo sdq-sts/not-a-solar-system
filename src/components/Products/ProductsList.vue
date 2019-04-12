@@ -4,6 +4,7 @@
     :headers="headers"
     :items="productsList"
     class="elevation-1"
+    no-data-text="Nenhum produto cadastrado"
     hide-actions
   >
     <template slot="items" slot-scope="props">

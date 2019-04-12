@@ -143,7 +143,7 @@ export default {
         this.name = user.name
         this.email = user.email
         this.phone = user.phone
-        this.birthday = this.$options.filters.formatedDate(user.birthday)
+        this.birthday = user.birthday ? this.$options.filters.formatedDate(user.birthday) : ''
       }
     },
     validateDate (d) {
