@@ -1,5 +1,7 @@
 export const handleAjaxErrors = (error) => {
-  if (error.status === 401) {
+  const errorStatus = (error || {}).status
+
+  if (errorStatus === 401) {
     console.log('Não autorizado')
   }
 }

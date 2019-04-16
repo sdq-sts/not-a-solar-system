@@ -11,19 +11,19 @@ const router = new Router({
       path: '/',
       name: 'home',
       meta: { title: 'Home', requiresAuth: false },
-      component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue')
-    },
-    {
-      path: '/registrar',
-      name: 'register',
-      meta: { meta: 'Registrar', requiresAuth: false },
-      component: () => import(/* webpackChunkName: "register" */ '@/views/Register.vue')
+      component: () => import(/* webpackChunkName: "login" */ '@/views/Login.vue')
     },
     {
       path: '/login',
       name: 'login',
       meta: { title: 'Login', requiresAuth: false },
       component: () => import(/* webpackChunkName: "login" */ '@/views/Login.vue')
+    },
+    {
+      path: '/registrar',
+      name: 'register',
+      meta: { meta: 'Registrar', requiresAuth: false },
+      component: () => import(/* webpackChunkName: "register" */ '@/views/Register.vue')
     },
     {
       path: '/dashboard',
@@ -57,7 +57,7 @@ const router = new Router({
         {
           path: '/config',
           name: 'settings',
-          meta: { title: 'Configuraçṍes' },
+          meta: { title: 'Configurações' },
           component: () => import(/* webpackChunkName: "settings" */ '@/views/Settings.vue')
         }
       ]
