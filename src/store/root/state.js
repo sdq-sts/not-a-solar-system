@@ -1,7 +1,9 @@
+const awsBucket = process.env.NODE_ENV === 'production' ? `not-a-solar-system` : `not-a-solar-system-dev`
+
 export const initialState = () => ({
   awsUrl: 'https://s3-sa-east-1.amazonaws.com',
-  awsBucket: 'not-a-solar-system',
   company: 'Not a solar system',
+  awsBucket,
   user: {},
   userId: '',
   username: '',

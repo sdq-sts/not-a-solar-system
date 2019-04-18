@@ -73,7 +73,8 @@ export default {
         const { type: fileType } = this.file
         try {
           const { data: res } = await this.requestFileUploadUrl({ fileType, folder: 'avatars' })
-          await this.uploadFile({ url: res.url, file: this.file })
+          const x = await this.uploadFile({ url: res.url, file: this.file })
+          console.log(x)
 
           update.avatar = res.key
         } catch (error) {
