@@ -1,7 +1,5 @@
 const awsBucket = process.env.NODE_ENV === 'production' ? process.env.VUE_APP_PROD_BUCKET : process.env.VUE_APP_DEV_BUCKET
 
-console.log(process.env)
-
 export const initialState = () => ({
   awsUrl: 'https://s3-sa-east-1.amazonaws.com',
   company: 'Not a solar system',

@@ -70,11 +70,13 @@ export default {
   methods: {
     async setChartData () {
       const labels = Object.values(this.mostSoldProducts).map(x => x.name ? x.name : '')
-      const series = Object.values(this.mostSoldProducts).map(x => x.amount ? x.amount : 0)
+      const series = Object.values(this.mostSoldProducts)
+        .map(x => x.amount ? x.amount : 0)
+        .sort((x, y) => y - x)
 
       if (!isEmpty(this.mostSoldProducts) && !(isEqual(series, this.series))) {
         this.options = { ...this.options, labels }
-        this.series = series
+        this.series = series.length > 10 ? series.slice(0, 10) : series
       }
     },
     darkThemeOptions () {
