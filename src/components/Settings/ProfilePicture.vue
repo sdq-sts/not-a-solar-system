@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card color="accent" height="100%">
     <v-container>
       <input
         tabindex="-1"
@@ -34,7 +34,7 @@
 
       <v-layout>
         <v-flex>
-          <p class="headline">{{ user.name }}</p>
+          <p class="title">{{ user.name }}</p>
           <p class="body-2">Email: {{ user.email }}</p>
         </v-flex>
       </v-layout>

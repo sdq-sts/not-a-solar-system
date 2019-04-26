@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card color="accent">
     <v-container>
       <div class="heading mb-5">{{ heading }}</div>
 

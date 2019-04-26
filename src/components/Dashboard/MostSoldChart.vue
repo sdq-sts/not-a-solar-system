@@ -1,5 +1,9 @@
 <template>
-  <v-card :class="{ 'pa-3': screenSize.xlOnly, 'pa-1': screenSize.lgAndDown }" height="100%">
+  <v-card
+    :class="{ 'pa-3': screenSize.xlOnly, 'pa-1': screenSize.lgAndDown }"
+    height="100%"
+    color="accent"
+  >
     <v-layout v-if="!series.length">
       <v-flex>
         <p class="text-xs-center body mt-1">Sem dados disponíveis</p>
@@ -9,7 +13,7 @@
     <apexchart
       v-if="series.length"
       width="100%"
-      :height="screenSize.lgAndDown ? 260 : 300"
+      :height="screenSize.lgAndDown ? 230 : 300"
       type="pie"
       :options="options"
       :series="series"
@@ -34,9 +38,23 @@ export default {
     series: [],
     options: {
       labels: [],
+      theme: {
+        palette: 'palette1',
+        monochrome: {
+          enabled: false,
+          color: '#060734',
+          shadeTo: 'light',
+          shadeIntensity: 0.65
+        }
+      },
+      title: {
+        text: 'MAIS VENDIDOS',
+        align: 'center',
+        style: { fontSize: '12px' }
+      },
       legend: { show: false },
-      title: { text: 'Mais vendidos', align: 'center' },
       chart: {
+        fontFamily: 'Work Sans, sans-serif',
         foreColor: '#373d3f',
         toolbar: { show: false },
         animations: {

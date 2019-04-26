@@ -8,8 +8,8 @@ export const getters = {
 
     if (isPurchasesFetched && isSalesFetched) {
       return [
-        { name: 'Compras', data: [ ...rootGetters['purchases/purchasesByMonth'].reduce((x, y) => [...x, y.total], []) ] },
-        { name: 'Vendas', data: [ ...rootGetters['sales/salesByMonth'].reduce((x, y) => [...x, y.total], []) ] }
+        { name: 'COMPRAS', data: [ ...rootGetters['purchases/purchasesByMonth'].reduce((x, y) => [...x, y.total], []) ] },
+        { name: 'VENDAS', data: [ ...rootGetters['sales/salesByMonth'].reduce((x, y) => [...x, y.total], []) ] }
       ]
     }
   },

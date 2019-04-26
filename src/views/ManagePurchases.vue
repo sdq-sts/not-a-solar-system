@@ -1,7 +1,7 @@
 <template>
   <v-container grid-list-xl>
     <v-dialog
-      width="50%"
+      :width="$vuetify.breakpoint.xlOnly ? '50%' : '80%'"
       class="ma-0"
       v-model="formPurchaseDialog"
       no-click-animation
@@ -40,6 +40,7 @@
           color="primary"
           class="ma-0"
           @click="openNewPurchaseDialog"
+          :small="$vuetify.breakpoint.lgAndDown"
         >{{ text.newPurchase }}</v-btn>
       </v-flex>
 
@@ -99,7 +100,7 @@ export default {
     purchaseToDelete: {},
     purchaseToEdit: null,
     page: 1,
-    limit: 10,
+    limit: 12,
     text: {
       newPurchase: 'Cadastrar Compra'
     }
@@ -198,7 +199,7 @@ export default {
   async beforeRouteEnter (to, from, next) {
     const promises = [
       store.dispatch('purchases/fetchPurchasesMeta'),
-      store.dispatch('purchases/fetchPurchases', { page: 1, limit: 10 })
+      store.dispatch('purchases/fetchPurchases', { page: 1, limit: 12 })
     ]
 
     try {

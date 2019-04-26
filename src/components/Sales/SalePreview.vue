@@ -1,5 +1,5 @@
 <template>
-  <v-card height="100%" class="pt-2 pr-2 pl-2">
+  <v-card height="100%" class="pt-2 pr-2 pl-2" color="accent">
     <v-container fill-height>
       <v-layout column>
         <v-layout row>
@@ -9,18 +9,26 @@
         </v-layout>
 
         <v-layout fill-height>
-          <v-flex>
+          <v-flex xs12 v-bind:align-self-center="!products.length">
             <p
-              class="ml-2 mr-2"
+              v-if="!products.length"
+              class="body-2 text-xs-center mb-0"
+            >NENHUM PRODUTO ADICIONADO</p>
+
+            <p
+              class="ml-2 mr-2 mt-3 mb-0"
               v-for="(item, i) in products"
               :key="`${item.product}-${i}`"
             >
               <v-layout justify-space-between>
-                <v-flex xs7>
+                <v-flex lg6 xl7>
                   <p class="mb-0 text-truncate">{{i + 1}} - {{ item.name }}...</p>
                 </v-flex>
-                <v-flex>
-                  <p class="mb-0 text-xs-right">{{ item.amount * item.salePrice | currencyBRL }}</p>
+                <v-flex xs2>
+                  <p class="mb-0 text-xs-left">x {{ item.amount }}</p>
+                </v-flex>
+                <v-flex xs2>
+                  <p class="mb-0 text-xs-right body-2">{{ item.amount * item.salePrice | currencyBRL }}</p>
                 </v-flex>
                 <v-flex xs1>
                   <p class="mb-0 text-xs-right">
@@ -33,7 +41,7 @@
         </v-layout>
 
         <v-layout justify-space-between>
-          <v-flex xs3>
+          <v-flex lg4 xl3>
             <v-text-field
               class="ml-2"
               v-model.number="received"

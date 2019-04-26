@@ -1,23 +1,25 @@
-import colors from 'vuetify/es5/util/colors'
-
 const darkThemeColors = {
-  primary: colors.pink.darken2,   // #616161
-  secondary: colors.grey.darken2, // #616161
-  accent: colors.blue.base,       // #2196F3
-  success: colors.green.lighten1, // #9CCC65
-  warning: colors.yellow.base,    // #FFEB3B
-  error: colors.red.accent2,      // #FF5252
-  danger: colors.red.accent2      // #FF5252
+  primary: '#C2185B',
+  secondary: '#09032B',
+  accent: '#09032B',
+  success: '#9CCC65',
+  warning: '#FFEB3B',
+  error: '#FF5252',
+  danger: '#F0544F',
+  bgColor: '#06021C',
+  accentHover: '#06021C'
 }
 
 const lightThemeColors = {
-  primary: colors.blue.lighten2,  // #64B5F6
-  secondary: colors.red.lighten4, // #FFCDD2
-  accent: colors.blue.base,       // #2196F3
-  success: colors.green.accent2,  // #69F0AE
-  warning: colors.yellow.accent2, // #FFFF00
-  error: colors.red.accent2,      // #FF5252
-  danger: colors.red.accent2      // #FF5252
+  primary: '#00B0FF',
+  secondary: '#00B0FF',
+  accent: '#FFFFFF',
+  success: '#43A047',
+  warning: '#FFB300',
+  error: '#FF5252',
+  danger: '#FF5252',
+  bgColor: '#E5E5E5',
+  accentHover: '#E5E5E5'
 }
 
 export { darkThemeColors, lightThemeColors }

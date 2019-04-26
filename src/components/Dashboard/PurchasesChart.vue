@@ -1,8 +1,11 @@
 <template>
-  <v-card :class="{ 'pa-3': screenSize.xlOnly, 'pa-1': screenSize.lgAndDown }">
+  <v-card
+    :class="{ 'pa-3': screenSize.xlOnly, 'pa-1': screenSize.lgAndDown }"
+    color="accent"
+  >
     <apexchart
       width="100%"
-      :height="screenSize.lgAndDown ? 277 : 298"
+      :height="screenSize.lgAndDown ? 232 : 290"
       type="line"
       :options="options"
       :series="series"
@@ -29,9 +32,20 @@ export default {
       yaxis: {
         labels: { formatter: (value) => currencyBRL(value) }
       },
-      title: { text: 'Histórico', align: 'center' },
+      title: {
+        text: 'HISTÓRICO',
+        align: 'center',
+        offsetY: 20,
+        style: { fontSize: '12px' }
+      },
+      legend: {
+        show: true,
+        offsetY: -14,
+        markers: { width: 8, height: 8 }
+      },
       tooltip: { theme: 'light' },
       chart: {
+        fontFamily: 'Work Sans, sans-serif',
         foreColor: '#373d3f',
         toolbar: { show: false },
         animations: {
@@ -55,8 +69,8 @@ export default {
       }
     },
     series: [
-      { name: 'Compras', data: [] },
-      { name: 'Vendas', data: [] }
+      { name: 'COMPRAS', data: [] },
+      { name: 'VENDAS', data: [] }
     ]
   }),
 
@@ -130,5 +144,7 @@ export default {
 </script>
 
 <style>
-
+.apexcharts-legend-text {
+  font-size: 11px!important;
+}
 </style>

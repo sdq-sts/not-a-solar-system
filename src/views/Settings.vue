@@ -1,8 +1,11 @@
 <template>
 <v-container grid-list-xl>
   <v-layout row wrap>
-    <v-flex xs8 offset-xs2>
-      <v-layout>
+    <v-flex
+      xs12 lg12 xl8
+      offset-xs0 offset-lg0 offset-xl2
+    >
+      <v-layout :class="{ 'mt-3': screenSize.xlOnly, 'mt-1': screenSize.lgAndDown }">
         <v-flex xs3>
           <ProfilePicture
             v-model="file"
@@ -53,7 +56,10 @@ export default {
       'getImage',
       'userAvatar',
       'defaultAvatar'
-    ])
+    ]),
+    screenSize () {
+      return this.$vuetify.breakpoint
+    }
   },
 
   methods: {

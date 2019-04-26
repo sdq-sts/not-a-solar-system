@@ -1,8 +1,7 @@
 <template>
   <v-container grid-list-xl>
     <v-dialog
-      width="40%"
-      class="ma-0"
+      :width="$vuetify.breakpoint.xlOnly ? '50%' : '80%'"
       v-model="dialog"
       no-click-animation
       persistent
@@ -26,7 +25,11 @@
       </product-form>
     </v-dialog>
 
-    <v-dialog width="400" persistent v-model="dialogDelete" no-click-animation>
+    <v-dialog width="400"
+      v-model="dialogDelete"
+      no-click-animation
+      persistent
+    >
       <ProductDelete
         :product="productToDelete"
         @cancel="closeDeleteDialog"
@@ -42,10 +45,10 @@
       >
         <v-btn
           ref="addProductBtn"
-          @click="registerProduct"
-          class="ma-0"
+          :small="$vuetify.breakpoint.lgAndDown"
           color="primary"
-          dark
+          class="ma-0"
+          @click="registerProduct"
         >{{ registerProductBtnText }}</v-btn>
       </v-flex>
     </v-layout>
@@ -119,7 +122,7 @@ export default {
     productToDelete: {},
     productToEdit: null,
     page: 1,
-    limit: 3
+    limit: 12
   }),
 
   watch: {
@@ -310,7 +313,7 @@ export default {
   async beforeRouteEnter (to, from, next) {
     const promises = [
       store.dispatch('products/fetchProductsMeta'),
-      store.dispatch('products/fetchProducts')
+      store.dispatch('products/fetchProducts', { page: 1, limit: 12 })
     ]
 
     try {

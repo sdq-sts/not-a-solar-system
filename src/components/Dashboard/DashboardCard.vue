@@ -1,13 +1,14 @@
 <template>
-  <v-card class="rounded-card pt-2 pb-2 pl-3 pr-3">
+  <v-card class="rounded-card pt-2 pb-2 pl-3 pr-3" color="accent">
     <v-card-title :class="{ 'pa-0': true, 'mt-3': screenSize.xlOnly, 'mt-1': screenSize.lgAndDown }">
       <p
-        :class="{ 'headline': screenSize.xlOnly, 'title': screenSize.lgAndDown, 'ma-0': true }"
+        :class="{ 'font-weight-medium': true, 'headline': screenSize.xlOnly, 'subheading': screenSize.lgAndDown, 'ma-0': true }"
       >{{ info }}</p>
     </v-card-title>
 
     <v-card-text :class="{ 'pl-0 pr-0': true, 'pb-0': screenSize.lgAndDown }">
-      <p :class="{ 'body-2': screenSize.xlOnly, 'body-1': screenSize.lgAndDown, 'mb-0': true }">{{ title }}</p>
+      <p :class="{ 'font-weight-medium': true, 'caption': screenSize.xlOnly, 'caption': screenSize.lgAndDown, 'text-uppercase': true, 'mb-0': true }"
+      >{{ title }}</p>
     </v-card-text>
   </v-card>
 </template>
@@ -33,7 +34,5 @@ export default {
 </script>
 
 <style>
-.rounded-card {
-  border-radius: 6px;
-}
+
 </style>

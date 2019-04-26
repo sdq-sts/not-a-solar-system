@@ -1,5 +1,5 @@
 <template>
-  <v-container :grid-list-xl="screenSize.xlOnly" grid-list-lg class="mt-0 pt-3">
+  <v-container :grid-list-xl="screenSize.xlOnly" grid-list-lg :class="{ 'mt-0': true, 'pt-2': screenSize.lgAndDown }">
     <v-layout row wrap>
       <v-flex
         xs10 md12 lg12 xl10
@@ -42,12 +42,12 @@
         </v-layout>
 
         <v-layout>
-          <v-flex xs7 md8>
-            <ProfitChart :dark="darkMode"/>
+        <v-flex xs5 md4>
+            <MostSoldChart :dark="darkMode"/>
           </v-flex>
 
-          <v-flex xs5 md4>
-            <MostSoldChart :dark="darkMode"/>
+          <v-flex xs7 md8>
+            <ProfitChart :dark="darkMode"/>
           </v-flex>
         </v-layout>
       </v-flex>

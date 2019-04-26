@@ -1,8 +1,8 @@
 <template>
-  <v-card @keydown.alt.n="addProduct" @keydown.esc="cancelBtn">
+  <v-card @keydown.alt.n="addProduct" @keydown.esc="cancelBtn" color="accent">
     <v-form v-model="isValid" ref="form" @submit.prevent="submitForm">
       <v-container grid-list-xl>
-        <h2 class="headline text-xs-center">{{ purchaseToEdit ? text.editPurchase : text.newPurchase }}</h2>
+        <h2 class="headline text-xs-center text-uppercase">{{ purchaseToEdit ? text.editPurchase : text.newPurchase }}</h2>
         <v-layout row wrap>
           <v-flex xs6>
             <v-text-field

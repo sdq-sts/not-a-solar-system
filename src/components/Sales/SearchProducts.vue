@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card color="accent">
     <v-container>
       <v-layout row>
         <v-flex>

@@ -1,9 +1,9 @@
 <template>
-  <v-card>
+  <v-card color="accent" :width="$vuetify.breakpoint.xlOnly ? '350px': '300px'">
     <v-card-title>
       <v-layout row>
-        <v-flex>
-          <v-card-title primary-title>
+        <v-flex align-self-center>
+          <v-card-title primary-title class="pl-0 pr-0">
             <div class="headline">{{ username }}</div>
           </v-card-title>
         </v-flex>
@@ -88,7 +88,7 @@ export default {
   data: () => ({
     darkTheme: false,
     text: {
-      darkMode: 'MODO ESCURO'
+      darkMode: 'TEMA ESCURO'
     }
   }),
 

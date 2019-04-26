@@ -1,7 +1,7 @@
 <template>
-  <v-card @keydown.esc="cancelBtn">
+  <v-card @keydown.esc="cancelBtn" color="accent">
     <v-container grid-list-lg>
-      <h2 class="headline text-xs-center mb-3">{{ productToEdit ? text.editProduct : text.newProduct }}</h2>
+      <h2 class="headline text-xs-center text-uppercase mb-3">{{ productToEdit ? text.editProduct : text.newProduct }}</h2>
       <v-form ref="form" @submit.prevent="submitForm">
         <v-layout row wrap>
           <v-flex xs12>

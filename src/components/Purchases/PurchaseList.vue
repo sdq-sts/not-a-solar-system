@@ -3,15 +3,15 @@
     :loading="loading"
     :headers="headers"
     :items="purchasesList"
-    hide-actions
     class="elevation-1"
+    hide-actions
     no-data-text="Nenhuma compra cadastrada"
   >
     <template slot="items" slot-scope="props">
       <td class="text-xs-center">{{ props.item.nfe }}</td>
       <td class="text-xs-center">{{ props.item.issueDate | formatedDate }}</td>
       <td class="text-xs-center" style="width: 120px">
-        <v-menu offset-y nudge-left="25%" full-width class="n-menu">
+        <v-menu offset-y nudge-left="25%" full-width class="n-menu" color="red">
           <v-chip
             slot="activator"
             class="n-chip"
@@ -21,7 +21,7 @@
             outline
           >{{ statusText(props.item.status) }}
           </v-chip>
-          <v-list>
+          <v-list class="list-bg">
             <v-list-tile
               v-for="(status, i) in purchaseStatus"
               :key="i"
@@ -130,7 +130,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .hide-icon {
   opacity: .3;
 }
@@ -144,5 +144,12 @@ export default {
 
 .n-chip .v-chip__content {
   cursor: pointer;
+}
+
+.theme--dark,
+.theme--light {
+  &.list-bg {
+    background: var(--accent);
+  }
 }
 </style>

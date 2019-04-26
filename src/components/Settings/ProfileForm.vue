@@ -1,10 +1,10 @@
 <template>
-  <v-card class="pa-4">
+  <v-card :class="{ 'pa-4': $vuetify.breakpoint.xlOnly }" color="accent">
     <v-container>
       <v-form ref="form">
         <v-layout>
           <v-flex>
-            <h3 class="ma-0 text-xs-center">{{ text.personalInfo }}</h3>
+            <h3 class="ma-0 mb-3 text-xs-center">{{ text.personalInfo }}</h3>
           </v-flex>
         </v-layout>
 
@@ -30,7 +30,7 @@
 
         <v-layout>
           <v-flex>
-            <h3 class="ma-0 text-xs-center">{{ text.contactInfo }}</h3>
+            <h3 class="ma-0 mb-3 text-xs-center">{{ text.contactInfo }}</h3>
           </v-flex>
         </v-layout>
 
@@ -39,6 +39,7 @@
             <v-text-field
               v-model="email"
               :label="labels.email"
+              disabled
             ></v-text-field>
           </v-flex>
 
@@ -53,7 +54,7 @@
 
         <v-layout>
           <v-flex>
-            <h3 class="ma-0 text-xs-center">{{ text.changePassword }}</h3>
+            <h3 class="ma-0 mb-3 text-xs-center">{{ text.changePassword }}</h3>
           </v-flex>
         </v-layout>
 

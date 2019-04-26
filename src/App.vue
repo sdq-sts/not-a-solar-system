@@ -1,6 +1,14 @@
 <template>
-  <v-app :dark="darkMode">
+  <v-app
+    :dark="darkMode"
+    :style="{
+      '--accent': $vuetify.theme.accent,
+      '--accent-hover': $vuetify.theme.accentHover,
+      'background': $vuetify.theme.bgColor
+    }"
+  >
     <v-content>
+
       <router-view/>
 
       <v-snackbar
@@ -65,6 +73,53 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+:root {
+  --accent: transparent;
+  --accent-hover: transparent;
+}
 
+/* DARK THEME */
+.theme--light,
+.theme--dark {
+  &.v-table {
+    background: var(--accent);
+  }
+
+  &.v-sheet {
+    background: transparent;
+  }
+
+  &.v-table tbody tr:hover:not(.v-datatable__expand-row) {
+    background: var(--accent-hover);
+  }
+
+  &.v-pagination {
+    .v-pagination__navigation,
+    .v-pagination__item {
+      background: var(--accent);
+    }
+  }
+}
+
+/* LIGHT THEME */
+// .theme--light {
+//   &.v-table,
+//   &.v-list {
+//     background: var(--accent);
+//   }
+
+//   &.v-pagination {
+//     .v-pagination__navigation,
+//     .v-pagination__item {
+//       background: var(--accent);
+//     }
+//   }
+
+// }
+
+/* STYLES */
+.v-card {
+  border-radius: 6px;
+}
 </style>

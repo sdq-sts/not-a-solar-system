@@ -1,6 +1,12 @@
 <template>
   <div>
-    <v-navigation-drawer v-model="drawer" absolute temporary clipped>
+    <v-navigation-drawer
+      :style="{ background: $vuetify.theme.bgColor }"
+      v-model="drawer"
+      temporary
+      absolute
+      clipped
+    >
       <TheWrapperDrawer/>
     </v-navigation-drawer>
 
@@ -13,7 +19,7 @@
     >
       <v-toolbar-title class="ml-0 mr-5 pl-0">
         <v-toolbar-side-icon @click="handleDrawerState"></v-toolbar-side-icon>
-        <span class="hidden-sm-and-down" v-text="company"></span>
+        <span class="hidden-sm-and-down subheading text-uppercase" v-text="company"></span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
 

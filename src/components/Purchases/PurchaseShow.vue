@@ -1,5 +1,5 @@
 <template>
-<v-card>
+<v-card color="accent">
   <v-container grid-list-xl>
     <v-layout row wrap>
       <v-flex xs6>

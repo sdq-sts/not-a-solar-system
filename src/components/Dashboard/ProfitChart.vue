@@ -1,8 +1,11 @@
 <template>
-  <v-card :class="{ 'pa-3': screenSize.xlOnly, 'pa-1': screenSize.lgAndDown }">
+  <v-card
+    :class="{ 'pa-3': screenSize.xlOnly, 'pa-1': screenSize.lgAndDown }"
+    color="accent"
+  >
     <apexchart
       width="100%"
-      :height="screenSize.lgAndDown ? 250 : 290"
+      :height="screenSize.lgAndDown ? 220 : 290"
       type="bar"
       :options="options"
       :series="series"
@@ -33,8 +36,13 @@ export default {
       yaxis: {
         labels: { formatter: (value) => currencyBRL(value) }
       },
-      title: { text: `Lucro no período`, align: 'center' },
+      title: {
+        text: `LUCRO NO PERÍODO`,
+        align: 'center',
+        style: { fontSize: '12px' }
+      },
       chart: {
+        fontFamily: 'Work Sans, sans-serif',
         foreColor: '#373d3f',
         toolbar: { show: false },
         animations: {

@@ -1,9 +1,9 @@
 <template>
-  <v-card>
+  <v-card color="accent">
     <v-container>
       <v-layout row>
         <v-flex>
-          <h2>{{ product ? product.name : 'Produto' }}</h2>
+          <h2 class="text-truncate" v-html="productTitle"></h2>
         </v-flex>
       </v-layout>
 
@@ -26,11 +26,15 @@
         </v-flex>
 
         <v-flex xs6>
-          <img style="max-width: 100%; display: block" :src="`${(product || {}).image ? product.image : defaultImage}`" alt="">
+          <v-img
+            :src="`${(product || {}).image ? product.image : defaultImage}`"
+            contain
+          >
+          </v-img>
         </v-flex>
       </v-layout>
 
-      <v-form ref="productForm">
+      <v-form ref="productForm" :class="{ 'mt-5': $vuetify.breakpoint.xlOnly }">
         <v-layout row justify-space-between>
           <v-flex xs2 shrink>
             <v-text-field
@@ -95,6 +99,9 @@ export default {
     },
     productTotal () {
       return (this.product || {}).salePrice * this.amount || 0
+    },
+    productTitle () {
+      return this.product ? this.product.name : '&#8192'
     }
   },
 
