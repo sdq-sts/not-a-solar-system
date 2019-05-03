@@ -4,7 +4,7 @@ import purchases from './purchases'
 import dashboard from './dashboard'
 import products from './products'
 import sales from './sales'
-import { state, getters, mutations, actions } from './root'
+import * as rootModule from './root'
 
 Vue.use(Vuex)
 
@@ -15,8 +15,5 @@ export default new Vuex.Store({
     products,
     sales
   },
-  state,
-  getters,
-  mutations,
-  actions
+  ...rootModule
 })

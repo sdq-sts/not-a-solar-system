@@ -39,7 +39,7 @@
           @click="clearForm"
         >Limpar</v-btn>
         <v-spacer></v-spacer>
-        <v-btn color="info"
+        <v-btn color="primary"
           large
           type="submit"
           @submit.prevent="submit(email, password)"

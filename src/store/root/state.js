@@ -1,8 +1,12 @@
-const awsBucket = process.env.NODE_ENV === 'production' ? process.env.VUE_APP_PROD_BUCKET : process.env.VUE_APP_DEV_BUCKET
+const awsUrl = process.env.VUE_APP_AWS_URL
+const company = process.env.VUE_APP_COMPANY_NAME
+const awsBucket = process.env.NODE_ENV === 'production'
+  ? process.env.VUE_APP_PROD_BUCKET
+  : process.env.VUE_APP_DEV_BUCKET
 
 export const initialState = () => ({
-  awsUrl: 'https://s3-sa-east-1.amazonaws.com',
-  company: 'Not a solar system',
+  awsUrl,
+  company,
   awsBucket,
   user: {},
   userId: '',

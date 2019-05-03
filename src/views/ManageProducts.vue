@@ -4,7 +4,6 @@
       :width="$vuetify.breakpoint.xlOnly ? '50%' : '80%'"
       v-model="dialog"
       no-click-animation
-      persistent
     >
       <product-form
         :productToEdit="productToEdit"
@@ -25,7 +24,8 @@
       </product-form>
     </v-dialog>
 
-    <v-dialog width="400"
+    <v-dialog
+      width="400"
       v-model="dialogDelete"
       no-click-animation
       persistent
@@ -181,7 +181,7 @@ export default {
       try {
         await this.updateProduct(product)
 
-        this.showSnackbar({ color: 'success', text: `Produto editado` })
+        this.showSnackbar({ color: 'success', text: `Produto editado com sucesso` })
         this.fetchProductsMeta()
         this.getProducts()
         this.productToEdit = null

@@ -62,11 +62,11 @@
         >Limpar</v-btn>
         <v-spacer></v-spacer>
         <v-btn
-          color="success"
+          color="primary"
           :disabled="!validForm"
           tabindex="4"
-          large
           type="submit"
+          large
           @submit.prevent="submit(name, email, password)"
         >Criar Conta</v-btn>
       </v-card-actions>

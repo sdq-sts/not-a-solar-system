@@ -146,10 +146,10 @@ export default {
   cursor: pointer;
 }
 
-.theme--dark,
-.theme--light {
-  &.list-bg {
-    background: var(--accent);
-  }
-}
+// .theme--light,
+// .theme--dark {
+//   &.list-bg {
+//     background: var(--accent);
+//   }
+// }
 </style>

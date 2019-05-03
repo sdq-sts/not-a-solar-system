@@ -79,47 +79,35 @@ export default {
   --accent-hover: transparent;
 }
 
-/* DARK THEME */
+/* THEME */
 .theme--light,
 .theme--dark {
+  &.list-bg {
+    background: var(--accent)!important;
+  }
+
   &.v-table {
-    background: var(--accent);
+    background-color: var(--accent)!important;
   }
 
   &.v-sheet {
-    background: transparent;
+    background: var(--accent)!important;
   }
 
   &.v-table tbody tr:hover:not(.v-datatable__expand-row) {
-    background: var(--accent-hover);
+    background: var(--accent-hover)!important;
   }
 
   &.v-pagination {
     .v-pagination__navigation,
-    .v-pagination__item {
-      background: var(--accent);
+    .v-pagination__item:not(.v-pagination__item--active) {
+      background: var(--accent)!important;
     }
   }
 }
 
-/* LIGHT THEME */
-// .theme--light {
-//   &.v-table,
-//   &.v-list {
-//     background: var(--accent);
-//   }
-
-//   &.v-pagination {
-//     .v-pagination__navigation,
-//     .v-pagination__item {
-//       background: var(--accent);
-//     }
-//   }
-
-// }
-
 /* STYLES */
 .v-card {
-  border-radius: 6px;
+  border-radius: 6px!important;
 }
 </style>
