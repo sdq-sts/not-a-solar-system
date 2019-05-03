@@ -4,7 +4,10 @@
       <v-flex xs10 md5 lg5 xl3>
         <v-layout row wrap>
           <v-flex xs12>
-            <LoginForm @submitLoginForm="submitLoginForm"/>
+            <LoginForm
+              :loading="isLoginLoading"
+              @submitLoginForm="submitLoginForm"
+            />
           </v-flex>
           <v-flex xs12>
             <p class="text-xs-center mt-3">Se você não possui uma conta, <router-link :to="{ name: registerLink }">crie uma aqui</router-link></p>
@@ -25,8 +28,15 @@ export default {
     registerLink: 'register'
   }),
 
+  computed: {
+    isLoginLoading () {
+      return this.$store.getters.isLoginLoading
+    }
+  },
+
   methods: {
     async submitLoginForm (payload) {
+      this.$store.commit('SET_LOGIN_LOADING', true)
       const result = await this.$store.dispatch('submitLoginForm', payload)
       const nextUrl = this.$route.params.nextUrl ? this.$route.params.nextUrl : '/dashboard'
 

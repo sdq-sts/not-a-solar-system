@@ -40,6 +40,7 @@
         >Limpar</v-btn>
         <v-spacer></v-spacer>
         <v-btn color="primary"
+          :loading="loading"
           :large="$vuetify.breakpoint.lgAndUp"
           type="submit"
           @submit.prevent="submit(email, password)"
@@ -51,6 +52,13 @@
 
 <script>
 export default {
+  props: {
+    loading: {
+      type: Boolean,
+      default: false
+    }
+  },
+
   data: () => ({
     email: '',
     password: ''

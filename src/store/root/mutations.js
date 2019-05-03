@@ -16,6 +16,7 @@ export const mutations = {
   SET_USER_EMAIL (state, email) { state.userEmail = email },
   SET_USER_AVATAR (state, url) { state.userAvatar = url },
   SET_LOGGEDIN (state, value) { state.isLoggedIn = value },
+  SET_LOGIN_LOADING (state, value) { state.isLoginLoading = value },
   SET_SNACKBAR (state, value) { state.snackbar = value },
   SET_SNACKBAR_COLOR (state, color) { state.snackbarColor = color },
   SET_SNACKBAR_TEXT (state, text) { state.snackbarText = text }

@@ -17,6 +17,7 @@ export const actions = {
       return true
     } catch (error) {
       dispatch('showSnackbar', { color: 'error', text: 'Email ou senha inválidos.' })
+      commit('SET_LOGIN_LOADING', false)
       handleAjaxErrors(error.response)
       return false
     }

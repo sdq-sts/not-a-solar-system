@@ -15,6 +15,7 @@ export const initialState = () => ({
   userAvatar: '',
   defaultAvatar: require('@/assets/default_avatar.png'),
   isLoggedIn: false,
+  isLoginLoading: false,
   jwt: '',
   darkMode: false,
   snackbar: false,

@@ -92,6 +92,8 @@ export default {
       store.dispatch('showSnackbar', { color: 'error', text: `Houve um problema ao acessar a página.` })
     }
 
+    (from.name === 'login') && store.commit('SET_LOGIN_LOADING', false)
+
     next()
   }
 }
