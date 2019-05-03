@@ -6,6 +6,22 @@ SPA desenvolvido para o app [**NOT A SOLAR SYSTEM**](https://not-a-solar-system.
 
 O código do backend pode ser econtrado [aqui](https://github.com/sdq-sts/not-a-solar-system-back).
 
+Caso não queira criar uma conta e inserir seus dados, pode usar o seguinte:
+
+```
+Email: gary.oldman@mail.com
+Senha: oldman14000
+```
+
+A aplicação suporta um tema claro e um escuro, que podem ser ativados através do botão switch no menu de logout.
+
+Tema claro:
+
+![Not a solar system - Light theme](https://i.imgur.com/OwWaPvJ.png)
+
+Tema escuro:
+
+![Not a solar system - Dark theme](https://i.imgur.com/JtIN94n.png)
 
 ### BIBLIOTECAS
 
