@@ -1,5 +1,5 @@
 <template>
-  <v-container grid-list-xl>
+  <v-container grid-list-xl :fluid="screenSize.lgAndDown">
     <v-layout row>
       <v-flex xs7>
         <v-layout column>
@@ -62,7 +62,10 @@ export default {
   }),
 
   computed: {
-    ...mapGetters([ 'getImage' ])
+    ...mapGetters([ 'getImage' ]),
+    screenSize () {
+      return this.$vuetify.breakpoint
+    }
   },
 
   methods: {

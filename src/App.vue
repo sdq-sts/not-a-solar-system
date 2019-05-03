@@ -110,4 +110,13 @@ export default {
 .v-card {
   border-radius: 6px!important;
 }
+
+/* TRANSITIONS */
+.slide-enter-active, .slide-leave-active {
+  transition: all .3s;
+}
+.slide-enter, .slide-leave-to {
+  transform: translateY(20px);
+  opacity: 0;
+}
 </style>

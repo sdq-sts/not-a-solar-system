@@ -1,7 +1,7 @@
 <template>
   <v-container fluid fill-height>
     <v-layout align-center justify-center row fill-height>
-      <v-flex xs3>
+      <v-flex md5 lg5 xl3>
         <v-layout column fill-height>
           <v-flex xs3>
             <RegisterForm

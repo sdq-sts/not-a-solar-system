@@ -35,12 +35,12 @@
 
       <v-card-actions class="pl-3 pr-3 pb-3">
         <v-btn
-          large
+          :large="$vuetify.breakpoint.lgAndUp"
           @click="clearForm"
         >Limpar</v-btn>
         <v-spacer></v-spacer>
         <v-btn color="primary"
-          large
+          :large="$vuetify.breakpoint.lgAndUp"
           type="submit"
           @submit.prevent="submit(email, password)"
         >Login</v-btn>

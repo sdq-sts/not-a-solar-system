@@ -1,5 +1,5 @@
 <template>
-  <v-container :grid-list-xl="screenSize.xlOnly" grid-list-lg :class="{ 'mt-0': true, 'pt-2': screenSize.lgAndDown }">
+  <v-container :grid-list-xl="screenSize.xlOnly" grid-list-lg :class="{ 'mt-0': true, 'pt-2': screenSize.lgAndDown }" :fluid="screenSize.lgAndDown">
     <v-layout row wrap>
       <v-flex
         xs10 md12 lg12 xl10

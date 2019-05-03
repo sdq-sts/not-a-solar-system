@@ -1,9 +1,11 @@
 <template>
-  <v-container grid-list-xl>
+  <v-container grid-list-xl :fluid="screenSize.lgAndDown">
     <v-dialog
-      :width="$vuetify.breakpoint.xlOnly ? '50%' : '80%'"
+      :width="screenSize.xlOnly ? '50%' : '80%'"
       v-model="dialog"
+      transition="slide"
       no-click-animation
+      persistent
     >
       <product-form
         :productToEdit="productToEdit"
@@ -137,6 +139,9 @@ export default {
       'products',
       'productsCount'
     ]),
+    screenSize () {
+      return this.$vuetify.breakpoint
+    },
     productImg () {
       const hasProdutcToEdit = (this.productToEdit && this.productToEdit.image)
 

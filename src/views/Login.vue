@@ -1,7 +1,7 @@
 <template>
   <v-container fluid fill-height class="pa-0">
     <v-layout align-center justify-center row fill-height>
-      <v-flex xs3>
+      <v-flex xs10 md5 lg5 xl3>
         <v-layout row wrap>
           <v-flex xs12>
             <LoginForm @submitLoginForm="submitLoginForm"/>

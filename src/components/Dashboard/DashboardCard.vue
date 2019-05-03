@@ -7,7 +7,7 @@
     </v-card-title>
 
     <v-card-text :class="{ 'pl-0 pr-0': true, 'pb-0': screenSize.lgAndDown }">
-      <p :class="{ 'font-weight-medium': true, 'caption': screenSize.xlOnly, 'caption': screenSize.lgAndDown, 'text-uppercase': true, 'mb-0': true }"
+      <p :class="{ 'font-weight-medium': true, 'caption': screenSize.xlOnly, 'lg-font-size': screenSize.lgAndDown, 'text-uppercase': true, 'mb-0': true }"
       >{{ title }}</p>
     </v-card-text>
   </v-card>
@@ -34,5 +34,7 @@ export default {
 </script>
 
 <style>
-
+.lg-font-size {
+  font-size: 0.7em;
+}
 </style>

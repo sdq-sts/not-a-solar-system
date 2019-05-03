@@ -1,6 +1,9 @@
 <template>
   <v-card color="accent">
-    <v-container>
+    <v-container :class="{
+      'pt-2': $vuetify.breakpoint.lgAndDown,
+      'pb-2': $vuetify.breakpoint.lgAndDown
+    }">
       <v-layout row>
         <v-flex>
           <h2 class="text-truncate" v-html="productTitle"></h2>

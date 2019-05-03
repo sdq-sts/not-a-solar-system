@@ -58,7 +58,7 @@ const router = new Router({
           path: '/config',
           name: 'settings',
           meta: { title: 'Configurações' },
-          component: () => import(/* webpackChunkName: "settings" */ '@/views/Settings.vue')
+          component: () => import(/* webpackChunkName: "settings" */ '@/views/ManageSettings.vue')
         }
       ]
     }

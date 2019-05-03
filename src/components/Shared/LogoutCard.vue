@@ -1,15 +1,15 @@
 <template>
-  <v-card color="accent" :width="$vuetify.breakpoint.xlOnly ? '350px': '300px'">
+  <v-card color="accent" :width="screenSize.xlOnly ? '350px': '250px'">
     <v-card-title>
       <v-layout row>
         <v-flex align-self-center>
           <v-card-title primary-title class="pl-0 pr-0">
-            <div class="headline">{{ username }}</div>
+            <div :class="{ 'headline': screenSize.xlOnly, 'title': screenSize.lgAndDown }">{{ username }}</div>
           </v-card-title>
         </v-flex>
 
         <v-flex xs5 class="text-xs-center">
-          <v-avatar size="120px">
+          <v-avatar :size="screenSize.xlOnly ? '120px': '80px'">
             <v-img :src="userPictureUrl"></v-img>
           </v-avatar>
         </v-flex>
@@ -96,6 +96,12 @@ export default {
     darkTheme: {
       handler: 'watchDarkProp',
       immediate: false
+    }
+  },
+
+  computed: {
+    screenSize () {
+      return this.$vuetify.breakpoint
     }
   },
 

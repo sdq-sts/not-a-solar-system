@@ -1,9 +1,10 @@
 <template>
-  <v-container grid-list-xl>
+  <v-container grid-list-xl :fluid="screenSize.lgAndDown">
     <v-dialog
       :width="$vuetify.breakpoint.xlOnly ? '50%' : '80%'"
       class="ma-0"
       v-model="formPurchaseDialog"
+      transition="slide"
       no-click-animation
       persistent
     >
@@ -21,7 +22,12 @@
       <PurchaseShow :purchase="purchaseToShow"/>
     </v-dialog>
 
-    <v-dialog width="400" persistent v-model="deletePurchaseDialog" no-click-animation>
+    <v-dialog
+      v-model="deletePurchaseDialog"
+      width="400"
+      no-click-animation
+      persistent
+    >
       <PurchaseDelete
         :item="purchaseToDelete"
         :loading="deleteLoading"
@@ -116,7 +122,10 @@ export default {
     ...mapGetters('purchases', [
       'purchases',
       'totalPurchases'
-    ])
+    ]),
+    screenSize () {
+      return this.$vuetify.breakpoint
+    }
   },
 
   methods: {
